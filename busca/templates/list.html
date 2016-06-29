@@ -1,0 +1,70 @@
+{% extends "base/base.html" %}
+{% load selectable_tags %}
+
+{% block content %}
+    <section class="block">
+        <div class="row">
+            <div class="large-12 medium-12 small-12 columns">
+                <div class="titulo-section">
+                    <h2>Buscador</h2>
+                </div>
+                    <div class="large-4 medium-4 small-12 columns">
+                        <a href="{% url 'create' %}" class="button">Adicionar</a>
+                    </div>
+                <div class="row">
+                    <div class="five columns">
+                        <form action="." method="GET">
+                            <div class="row collapse">
+                              <div class="eight mobile-three columns">
+                                    {{ search.q }}
+                                </div>
+                            <div class="four mobile-one columns">
+                                <button type="submit" class="postfix button"><i>search</i></button>
+                            </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                <div>
+                    <div>
+                        <table id="example" class="display" cellspacing="0" width="100%">
+                            <thead>
+                                <tr>
+                                    <th width="50">Id</th>
+                                    <th>Email</th>
+                                    <th width="350">Numero</th>
+                                    <th width="150"></th>
+                                    <th width="150"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for object in object_list %}
+                                <tr>
+                                    <td>{{ object.id }}</td>
+                                    <td>{{ object.text }}</td>
+                                    <td>{{ object.number }}</td>
+                                    <td>
+                                        <a href="{% url 'edit' object.id %}">editar</a>
+                                    </td>
+                                    <td>
+                                        <a href="{% url 'delete' object.id %}">delete</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                {% include "base/pagination.html" %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block extra %}
+{% include_jquery_libs %}
+{% include_ui_theme %}
+<script type="text/javascript" src="http://edoola.com/static/selectable/js/jquery.dj.selectable.c6b3ff26001e.js "></script>
+{% endblock %}

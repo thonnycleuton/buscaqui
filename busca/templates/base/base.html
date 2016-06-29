@@ -1,0 +1,24 @@
+<!doctype html>
+<html class="no-js" lang="pt_br">
+
+<head>
+    <meta charset="utf-8" />
+	<title>Buscador</title>
+	<link rel="stylesheet" href="http://www.w3resource.com/zurb-foundation3/foundation3/stylesheets/foundation.css" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+</head>
+
+<body>
+	<div class="body">
+        <main class="main">
+			{% block content %}{% endblock %}
+		</main>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
+	{% block extra %}
+	{% endblock %}
+	<!-- end block scripts -->
+</body>
+
+</html>
