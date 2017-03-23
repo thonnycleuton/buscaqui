@@ -8,3 +8,5 @@ psycopg2==2.6.1
 pyparsing==2.2.0
 six==1.10.0
 whitenoise==2.0.6
+django-celery
+redis

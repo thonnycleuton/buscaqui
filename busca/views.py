@@ -1,6 +1,7 @@
 from busca.models import Busca
 
 from busca.form import BuscaForm
+from busca.tasks import add_objects
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from django.shortcuts import redirect
@@ -25,6 +26,16 @@ class BuscaView(ListView):
 
     def get(self, request, **kwargs):
         self.object_list = self.get_queryset()
+
+        if request.GET.get('mybtn'):
+            try:
+                quantidade = int(request.GET.get('mytextbox'))
+            except ValueError as e:
+                quantidade = 0
+
+            if quantidade > 0:
+                add_objects(quantidade)
+
         if 'q' in request.GET:
             self.object_list = self.object_list.filter(text__icontains=request.GET.get('q'))
 
