@@ -9,6 +9,7 @@ class BuscaForm(forms.ModelForm):
 
     class Meta:
         model = Busca
+        fields = '__all__'
 
     q = forms.CharField(
         label='Search',

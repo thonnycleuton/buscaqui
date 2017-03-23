@@ -1,21 +1,41 @@
 <!doctype html>
-<html class="no-js" lang="pt_br">
+{% load static %}
+<html class="no-js" lang="pt_br" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <meta charset="utf-8" />
 	<title>Buscador</title>
-	<link rel="stylesheet" href="http://www.w3resource.com/zurb-foundation3/foundation3/stylesheets/foundation.css" />
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js"></script>
+    <link rel="stylesheet" href="{% static 'busca/css/foundation.min.css' %}" />
 </head>
 
 <body>
+    <header>
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <ul class="menu">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'create' %}">Adicionar</a></li>
+                </ul>
+            </div>
+            <div class="top-bar-right">
+                <form action="" method="GET">
+                    <div class="row collapse">
+                      <div class="eight mobile-three columns">
+                          <input type="text" name="mytextbox" />
+                          <input type="submit" class="btn" value="Popular" name="mybtn">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
 	<div class="body">
         <main class="main">
 			{% block content %}{% endblock %}
 		</main>
 	</div>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.js"></script>
+	<script src="{% static 'busca/js/jquery.min.js' %}"></script>
+	<script src="{% static 'busca/js/vendor/foundation.min.js' %}"></script>
 	{% block extra %}
 	{% endblock %}
 	<!-- end block scripts -->

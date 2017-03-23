@@ -10,15 +10,16 @@ from django.views.generic import ListView, CreateView, DeleteView, UpdateView
 class BuscaCreate(CreateView):
     model = Busca
     template_name = 'form.html'
+    fields = '__all__'
 
     def form_valid(self, form):
         form.save()
         messages.success(self.request, ('Salvo com sucesso!'))
-        return redirect('home')
+        return redirect('index')
 
 
 class BuscaView(ListView):
-    template_name = 'list.html'
+    template_name = 'index.html'
     model = Busca
     paginate_by = 100
 
@@ -53,4 +54,4 @@ class BuscaUpdate(UpdateView):
     def form_valid(self, form):
         form.save()
         messages.success(self.request, ('Alterado com sucesso!'))
-        return redirect('home')
+        return redirect('index')

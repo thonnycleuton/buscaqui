@@ -5,29 +5,15 @@
     <section class="block">
         <div class="row">
             <div class="large-12 medium-12 small-12 columns">
-                <div class="titulo-section">
-                    <h2>Buscador</h2>
-                </div>
-                    <div class="large-4 medium-4 small-12 columns">
-                        <a href="{% url 'create' %}" class="button">Adicionar</a>
-                    </div>
-                <div class="row">
-                    <div class="five columns">
-                        <form action="." method="GET">
-                            <div class="row collapse">
-                              <div class="eight mobile-three columns">
-                                    {{ search.q }}
-                                </div>
-                            <div class="four mobile-one columns">
-                                <button type="submit" class="postfix button"><i>search</i></button>
-                            </div>
-                            </div>
-                        </form>
-                    </div>
-
-                </div>
                 <div>
                     <div>
+                    <form action="" method="GET">
+                        <div class="row collapse">
+                          <div class="eight mobile-three columns">
+                              {{ search.q }}
+                            </div>
+                        </div>
+                    </form>
                         <table id="example" class="display" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
@@ -56,15 +42,15 @@
                         </table>
                     </div>
                 </div>
-
-                {% include "base/pagination.html" %}
             </div>
         </div>
     </section>
+    {% include "base/pagination.html" %}
 {% endblock %}
 
 {% block extra %}
 {% include_jquery_libs %}
 {% include_ui_theme %}
-<script type="text/javascript" src="http://edoola.com/static/selectable/js/jquery.dj.selectable.c6b3ff26001e.js "></script>
+{% load static %}
+    <script type="text/javascript" src="{% static 'busca/js/jquery.dj.selectable.js' %}"></script>
 {% endblock %}
