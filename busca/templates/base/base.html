@@ -18,14 +18,21 @@
                 </ul>
             </div>
             <div class="top-bar-right">
-                <form action="" method="GET">
-                    <div class="row collapse">
-                      <div class="eight mobile-three columns">
-                          <input type="text" name="mytextbox" />
-                          <input type="submit" class="btn" value="Popular" name="mybtn">
-                        </div>
-                    </div>
-                </form>
+                <ul  class="menu vertical medium-horizontal"  data-responsive-menu="drilldown medium-dropdown">
+                   <li class="has-form">
+                       <form action="" method="GET">
+                           <div class="row collapse">
+                               <div class="small-4 columns">
+                                   <input title="Insira mais 100 registros"
+                                          type="submit"
+                                          class="button"
+                                          value="+100"
+                                          name="mybtn">
+                               </div>
+                           </div>
+                       </form>
+                   </li>
+                </ul>
             </div>
         </div>
     </header>
