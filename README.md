@@ -1,44 +1,25 @@
-# python-getting-started
+# Buscaqui
 
-A barebones Python app, which can easily be deployed to Heroku.
+Buscaqui é um projeto simples em python/Django que faz a geração assíncrona de dados a partir da api randu para popular este sistema .
+O que ele faz? Este projeto simplesmente exibe uma lista paginável de enderecos de email gerados via requisição externa a API http://api.randuser.me e tambem gerando numeros randomicamente com a biblioteca random. Alem disso, possui um campo de busca com autocomplete para melhor busca dos endereços buscados.
 
-This application supports the [Getting Started with Python on Heroku](https://devcenter.heroku.com/articles/getting-started-with-python) article - check it out.
+Para gerar uma base de dados consumindo recursos da api Randuser é necessário rodar o comando abaixo: python manage.py buscar ele trará 300 enderecos de email que povoarão uma tabela do BD. O Sistema esta rodando em: http://q-buscador.herokuapp.com/ acesse.
 
-## Running Locally
+## Rodando localmente
 
 Make sure you have Python [installed properly](http://install.python-guide.org).  Also, install the [Heroku Toolbelt](https://toolbelt.heroku.com/) and [Postgres](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup).
 
 ```sh
-$ git clone git@github.com:heroku/python-getting-started.git
-$ cd python-getting-started
+$ git clone git@github.com:thonnycleuton/buscaqui.git
+$ cd buscaqui
 
 $ pip install -r requirements.txt
 
-$ createdb python_getting_started
+$ createdb buscaqui
 
 $ python manage.py migrate
 $ python manage.py collectstatic
 
-$ heroku local
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Deploying to Heroku
-
-```sh
-$ heroku create
-$ git push heroku master
-
-$ heroku run python manage.py migrate
-$ heroku open
-```
-or
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Documentation
-
-For more information about using Python on Heroku, see these Dev Center articles:
-
-- [Python on Heroku](https://devcenter.heroku.com/categories/python)
+Voce entao podera roda-lo localmente em [localhost:8000](http://localhost:8000/).
