@@ -9,8 +9,11 @@
                     <div>
                     <form action="" method="GET">
                         <div class="row collapse">
-                          <div class="eight mobile-three columns">
+                            <div class="small-4 columns">
                               {{ search.q }}
+                            </div>
+                            <div class="small-8 columns">
+                               <a href="#" class="button">Buscar</a>
                             </div>
                         </div>
                     </form>
@@ -19,7 +22,7 @@
                                 <tr>
                                     <th width="50">Id</th>
                                     <th>Email</th>
-                                    <th width="350">Numero</th>
+                                    <th width="350">Número</th>
                                     <th width="150"></th>
                                     <th width="150"></th>
                                 </tr>
@@ -28,7 +31,7 @@
                                 {% for object in object_list %}
                                 <tr>
                                     <td>{{ object.id }}</td>
-                                    <td>{{ object.text }}</td>
+                                    <td>{{ object.email }}</td>
                                     <td>{{ object.number }}</td>
                                     <td>
                                         <a href="{% url 'edit' object.id %}">editar</a>
