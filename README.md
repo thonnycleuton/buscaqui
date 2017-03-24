@@ -1,3 +1,15 @@
+=============================
+django-telegrambot
+=============================
+
+.. image:: https://badge.fury.io/py/django-telegrambot.png
+    :target: https://badge.fury.io/py/django-telegrambot
+
+.. image:: https://travis-ci.org/JungDev/django-telegrambot.png?branch=master
+    :target: https://travis-ci.org/JungDev/django-telegrambot
+
+A simple app to develop Telegram bots with Django
+
 # Buscaqui
 
 Buscaqui é um projeto simples em python/Django que faz a geração assíncrona de dados a partir da api randu para popular este sistema .
