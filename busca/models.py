@@ -7,4 +7,4 @@ class Busca(models.Model):
     email = models.TextField()
 
     def __unicode__(self):
-        return self.text
+        return self.email

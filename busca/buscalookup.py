@@ -5,7 +5,7 @@ from busca.models import Busca
 
 class BuscaLookup(ModelLookup):
     model = Busca
-    search_fields = ('text__icontains', )
+    search_fields = ('email__icontains', )
 
 
 registry.register(BuscaLookup)
