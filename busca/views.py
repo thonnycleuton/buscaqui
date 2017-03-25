@@ -28,9 +28,11 @@ class BuscaView(ListView):
         self.object_list = self.get_queryset()
 
         if request.GET.get('mybtn'):
+            # chama metodo assincrono e passa como parametro a quantidade de registro a serem inseridos
             add_objects(100)
 
         if 'q' in request.GET:
+            # filtra a url capturada pelo metodo GET
             self.object_list = self.object_list.filter(email__icontains=request.GET.get('q'))
 
         context = super(BuscaView, self).get_context_data(**kwargs)
