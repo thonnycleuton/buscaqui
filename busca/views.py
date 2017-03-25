@@ -15,7 +15,7 @@ class BuscaCreate(CreateView):
 
     def form_valid(self, form):
         form.save()
-        messages.success(self.request, ('Salvo com sucesso!'))
+        messages.success(self.request, 'Salvo com sucesso!')
         return redirect('index')
 
 
@@ -31,7 +31,7 @@ class BuscaView(ListView):
             add_objects(100)
 
         if 'q' in request.GET:
-            self.object_list = self.object_list.filter(text__icontains=request.GET.get('q'))
+            self.object_list = self.object_list.filter(email__icontains=request.GET.get('q'))
 
         context = super(BuscaView, self).get_context_data(**kwargs)
         context['search'] = BuscaForm()
@@ -48,15 +48,16 @@ class BuscaDelete(DeleteView):
         self.object = self.get_object()
         success_url = self.get_success_url()
         self.object.delete()
-        messages.error(self.request, ('Deletado com sucesso!'))
+        messages.error(self.request, 'Deletado com sucesso!')
         return HttpResponseRedirect(success_url)
 
 
 class BuscaUpdate(UpdateView):
     model = Busca
     template_name = 'form.html'
+    fields = '__all__'
 
     def form_valid(self, form):
         form.save()
-        messages.success(self.request, ('Alterado com sucesso!'))
+        messages.success(self.request, 'Alterado com sucesso!')
         return redirect('index')
