@@ -6,12 +6,11 @@ from busca.models import Busca
 
 
 class BuscaForm(forms.ModelForm):
-
     class Meta:
         model = Busca
         fields = '__all__'
 
     q = forms.CharField(
         label='Search',
-        widget=AutoCompleteWidget(BuscaLookup),
-        required=False,)
+        widget=AutoCompleteWidget(BuscaLookup, attrs={'placeholder': 'buscar'}),
+        required=False, )
