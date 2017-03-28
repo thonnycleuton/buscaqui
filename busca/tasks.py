@@ -18,7 +18,7 @@ def add_object(numero):
     data_api_objs = get_randomic_data()
 
     busca_obj = Busca()
-    busca_obj.text = '%s' % (data_api_objs['email'])
+    busca_obj.email = '%s' % (data_api_objs['email'])
     busca_obj.number = numero
     busca_obj.save()
 
